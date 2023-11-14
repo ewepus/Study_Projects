@@ -28,6 +28,7 @@ public class FruitStore {
         }
         if (!errors) {System.out.printf("%.2f",discountedPrice);
     }
-        else System.out.println("INVALID");}
+        else System.out.println("INVALID");
+    }
 }
 //var_5
