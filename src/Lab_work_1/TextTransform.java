@@ -9,7 +9,7 @@ public class TextTransform {
         char symbol_1 = scanner.next().charAt(0);
         char symbol_2 = scanner.next().charAt(0);
         String result = word.replace(String.valueOf(symbol_1), "").replace(String.valueOf(symbol_2), "");
-        System.out.println(result.toLowerCase());
+        System.out.print(result.toLowerCase());
     }
 }
 //var_10

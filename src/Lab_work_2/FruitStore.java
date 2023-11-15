@@ -5,12 +5,15 @@ import java.util.Scanner;
 public class FruitStore {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
+
         String fruitName = scanner.nextLine().toLowerCase();
         String dayName = scanner.nextLine().toLowerCase();
         double fruitWeight = Double.parseDouble(scanner.nextLine());
+
         double fruitPrice = 0.0;
         double discountedPrice = 0.0;
         boolean errors = false;
+
         switch (fruitName) {
             case "apple" -> fruitPrice += 9.99*23*fruitWeight;
             case "plum" -> fruitPrice += 10.98*23*fruitWeight;
@@ -24,11 +27,11 @@ public class FruitStore {
         switch (dayName) {
             case "monday","tuesday","wednesday","thursday","friday" -> discountedPrice += fruitPrice*0.95;
             case "saturday","sunday" -> discountedPrice += fruitPrice;
-            default-> errors = true;
+            default -> errors = true;
         }
         if (!errors) {System.out.printf("%.2f",discountedPrice);
     }
-        else System.out.println("INVALID");
+        else System.out.print("INVALID");
     }
 }
 //var_5
