@@ -23,7 +23,7 @@ public class FruitStore {
         }
         switch (dayName) {
             case "monday","tuesday","wednesday","thursday","friday" -> discountedPrice += fruitPrice*0.95;
-            case "saturday","sunday" -> discountedPrice += 0;
+            case "saturday","sunday" -> discountedPrice += fruitPrice;
             default-> errors = true;
         }
         if (!errors) {System.out.printf("%.2f",discountedPrice);
