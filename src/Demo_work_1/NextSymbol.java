@@ -7,6 +7,7 @@ public class NextSymbol {
         Scanner scanner = new Scanner(System.in);
         char symbol = scanner.next().charAt(0);
         System.out.println(--symbol);
+        System.out.print(symbol+23);
         scanner.close();
     }
 }

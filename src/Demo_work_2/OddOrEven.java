@@ -11,5 +11,10 @@ public class OddOrEven {
         } else {
             System.out.println("odd");
         }
+        if ((number + 23) % 2 == 0) {
+            System.out.println("even");
+        } else {
+            System.out.println("odd");
+        }
     }
 }
