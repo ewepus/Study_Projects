@@ -5,11 +5,14 @@ import java.util.Scanner;
 public class TextTransform {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+
         String word = scanner.nextLine();
-        char symbol_1 = scanner.next().charAt(0);
-        char symbol_2 = scanner.next().charAt(0);
-        String result = word.replace(String.valueOf(symbol_1), "").replace(String.valueOf(symbol_2), "");
-        System.out.print(result.toLowerCase());
+        char startChar = scanner.next().charAt(0), finishChar = scanner.next().charAt(0);
+
+        int startIndex = word.indexOf(startChar), finishIndex = word.indexOf(finishChar);
+        String partToDelete = word.substring(startIndex, finishIndex + 1), result = word.replace(partToDelete, "");
+
+        System.out.println(result.toLowerCase());
     }
 }
 //var_10
