@@ -1,8 +1,5 @@
-package Lab_work_5;
+public class MaxInString {
 
-import java.util.Scanner;
-
-public class Recursion {
     static boolean checkIntNumber(String t) {
         try {
             Integer.parseInt(t);
@@ -42,4 +39,3 @@ public class Recursion {
         System.out.println(max);
     }
 }
-//var_9
