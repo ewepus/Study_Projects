@@ -7,29 +7,32 @@ public class TravelTime {
         Scanner scanner = new Scanner(System.in);
 
         String depTime = scanner.nextLine();
-        int travelTime = Integer.parseInt(scanner.nextLine());
-        int stopTime = Integer.parseInt(scanner.nextLine());
+        int travelTime = scanner.nextInt();
+        int stopTime = scanner.nextInt();
 
-        int depTime_hours = Integer.parseInt(depTime.substring(0, 2));
-        int depTime_minutes = Integer.parseInt(depTime.substring(3, 5));
-
-        if ((depTime_hours > 23) || (depTime_hours < 0) || (depTime_minutes > 59) || (depTime_minutes < 0)) {
+        if (!depTime.contains(":") || travelTime < 0 || stopTime < 0) {
             System.out.println("Недопустимый формат времени");
-        }
-        else if ((travelTime + stopTime) > 1440) {
-            System.out.println("Время в пути не должно превышать один день");
-        }
-        else {
-                int arrivalTime = stopTime + travelTime + depTime_hours * 60 + depTime_minutes;
-                int arrivalTime_hours = arrivalTime / 60;
-                int arrivalTime_minutes = arrivalTime % 60;
+        } else {
+            int colonIndex = depTime.indexOf(':'); //индекс двоеточия
+            int depTimeHours = Integer.parseInt(depTime.substring(0, colonIndex)); //идём до двоеточия
+            int depTimeMinutes = Integer.parseInt(depTime.substring(colonIndex + 1)); //идём с двоеточия до конца
 
-                if (arrivalTime_hours >= 24) {
-                    arrivalTime_hours -= 24;
+            if ((depTimeHours > 23) || (depTimeHours < 0) || (depTimeMinutes > 59) || (depTimeMinutes < 0)) {
+                System.out.println("Недопустимый формат времени");
+            } else if ((travelTime + stopTime) > 1440) {
+                System.out.println("Время в пути не должно превышать один день");
+            } else {
+                int arrivalTime = depTimeHours * 60 + depTimeMinutes + travelTime + stopTime;
+                int arrivalTimeHours = arrivalTime / 60;
+                int arrivalTimeMinutes = arrivalTime % 60;
+
+                if (arrivalTimeHours >= 24) {
+                    arrivalTimeHours -= 24;
                 }
-                String format_hours = String.format("%02d", arrivalTime_hours);
-                String format_minutes = String.format("%02d", arrivalTime_minutes);
-                System.out.print(format_hours + ":" + format_minutes);
+                String formattedHours = String.format("%02d", arrivalTimeHours);
+                String formattedMinutes = String.format("%02d", arrivalTimeMinutes);
+                System.out.print(formattedHours + ":" + formattedMinutes);
+            }
         }
     }
 }

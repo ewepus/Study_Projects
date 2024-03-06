@@ -10,12 +10,12 @@ public class EvenSum {
         for (int i = 0; i < numbers.length; i++) {
             numbers[i] = Integer.parseInt(words[i]);
         }
-        int sum = 0, sum_N = 0;
-        for (int i = 0; i < numbers.length; i ++) {
+        int sum = 0, sumN = 0;
+        for (int i = 0; i < numbers.length; i++) {
             if (numbers[i] % 2 == 0) sum += numbers[i];
-            if (numbers[i] % 23 == 0) sum_N += numbers[i];
+            if (numbers[i] % 23 == 0) sumN += numbers[i];
         }
         System.out.println(sum);
-        System.out.println(sum_N);
+        System.out.println(sumN);
     }
 }

@@ -9,10 +9,13 @@ public class Calculation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        double inputFirst = Double.parseDouble(scanner.nextLine()), inputSecond = Double.parseDouble(scanner.nextLine()), sequenceNum = 23;
-        double answer = (pow(inputFirst, 2) + pow(inputSecond, 3)) / sequenceNum + (log(sequenceNum) / log(inputFirst) - log(inputSecond) / log(inputFirst));
+        double inputFirst = scanner.nextDouble();
+        double inputSecond = scanner.nextDouble();
+        int sequenceNum = 23;
 
-        System.out.printf("%.2f", answer);
+        double result = (pow(inputFirst, 2) + pow(inputSecond, 3)) / sequenceNum + (log(sequenceNum) / log(inputFirst)
+                - log(inputSecond) / log(inputFirst));
+        System.out.printf("%.2f", result);
     }
 }
 //var_10

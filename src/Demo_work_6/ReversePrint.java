@@ -12,7 +12,11 @@ public class ReversePrint {
             numbers[i] = digit;
         }
         for (int i = numbers.length - 1; i >= 0; i--) {
-            System.out.print(numbers[i] + " ");
+            if (i == 0) {
+                System.out.print(numbers[i]);
+            } else {
+                System.out.print(numbers[i] + " ");
+            }
         }
     }
 }

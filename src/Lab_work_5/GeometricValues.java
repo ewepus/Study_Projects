@@ -5,12 +5,13 @@ import java.util.Scanner;
 public class GeometricValues {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = Integer.parseInt(sc.nextLine()) * 23;
-        int b = Integer.parseInt(sc.nextLine()) * 23;
-        int c = Integer.parseInt(sc.nextLine()) * 23;
-        int d = Integer.parseInt(sc.nextLine()) * 23;
-        int e = Integer.parseInt(sc.nextLine()) * 23;
-        int f = Integer.parseInt(sc.nextLine()) * 23;
+        int N = 23;
+        int a = Integer.parseInt(sc.nextLine()) * N;
+        int b = Integer.parseInt(sc.nextLine()) * N;
+        int c = Integer.parseInt(sc.nextLine()) * N;
+        int d = Integer.parseInt(sc.nextLine()) * N;
+        int e = Integer.parseInt(sc.nextLine()) * N;
+        int f = Integer.parseInt(sc.nextLine()) * N;
         System.out.printf("%.2f", perimeter(a, b, c, d, e, f));
     }
 

@@ -6,7 +6,9 @@ public class PowerOfTwo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int limit = scanner.nextInt(), count = 0, power = 1;
+        int limit = scanner.nextInt();
+        int count = 0;
+        int power = 1;
 
         do {
             power *= 2;
@@ -14,6 +16,6 @@ public class PowerOfTwo {
         } while (limit > power * 2);
 
         System.out.println(power);
-        System.out.print(count);
+        System.out.println(count);
     }
 }
