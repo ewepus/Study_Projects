@@ -90,7 +90,6 @@ public class JavaDif {
             }
             flat[floor][row][col] = O;
             if (flat[floor][nextRow][nextCol] == L) {
-                flat[floor][row][col] = L;
                 floor++;
             }
             flat[floor][nextRow][nextCol] = P;
