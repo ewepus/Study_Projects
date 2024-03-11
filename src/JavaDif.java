@@ -89,7 +89,7 @@ public class JavaDif {
                 return false;
             }
 
-            flat[floor][row][col] = O; //зануляем предыдущее
+            flat[floor][row][col] = O; //зануляем место, где стояли
 
             if (flat[floor][nextRow][nextCol] == L) floor++;
 
