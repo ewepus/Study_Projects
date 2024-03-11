@@ -88,11 +88,12 @@ public class JavaDif {
             if (flat[floor][nextRow][nextCol] == B) {
                 return false;
             }
-            flat[floor][row][col] = O;
-            if (flat[floor][nextRow][nextCol] == L) {
-                floor++;
-            }
-            flat[floor][nextRow][nextCol] = P;
+
+            flat[floor][row][col] = O; //зануляем предыдущее
+
+            if (flat[floor][nextRow][nextCol] == L) floor++;
+
+            flat[floor][nextRow][nextCol] = P; //становимся на новое место
 
             row = nextRow;
             col = nextCol;
