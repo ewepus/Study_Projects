@@ -26,7 +26,7 @@ public class ReverseArray {
         String[][] reverseHorizontal = new String[n][m];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                reverseHorizontal[i][m - j - 1] = matrix[i][j];
+                reverseHorizontal[i][m - j - 1] = reverseVertical[i][j];
             }
         }
 
@@ -39,7 +39,8 @@ public class ReverseArray {
     static void printMatrix(String[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
-                System.out.print(matrix[i][j] + "\t");
+                if (j == matrix[0].length - 1) System.out.print(matrix[i][j]);
+                else System.out.print(matrix[i][j] + "\t");
             }
             System.out.println();
         }
