@@ -1,0 +1,51 @@
+int distance = 5;
+
+        while (!player.isDead() || !enemyKnight.isDead()) {
+            System.out.println("Расстояние до врага: " + distance + " клеток");
+            //ход игрока
+            if (distance > player.weapon.getDistance()) {
+                distance--;
+                System.out.println("Расстояние до врага: " + distance + " клеток");
+            }
+
+            if (player.health <= 70 || player.strength <= 70) {
+                for (int i = 0; i < player.items.length; i++) {
+                    if (player.useItem(i)) {
+                        break;
+                    }
+                }
+            }
+
+            if (player.action(enemyKnight, distance)) {
+
+            }
+
+        }
+System.out.println("""
+                    Список команд:
+                    1. Атаковать вражеского рыцаря
+                    2. Использовать предмет
+                    3. Переместиться к вражескому рыцарю на 1 клетку
+                    4. Вывести информацию о себе
+                    5. Вывести информацию о вражеском рыцаре
+                    """);
+            boolean endTurn = false;
+
+            while (!endTurn) {
+                int command = sc.nextInt();
+                switch (command) {
+                    case 1 -> player.action(enemyKnight, distance);
+                    case 2 -> {
+                        System.out.println("Введите номер предмета из инвентаря, чтобы его использовать");
+                        int pos = sc.nextInt();
+                        if (pos - 1 >= 0 && pos - 1 < 5) {
+                            if (player.useItem(pos)) {
+                                player.useItem(pos);
+                            } else System.out.println("Предмет уже использован");
+                        } else System.out.println("Некорректный номер предмета");
+                    }
+                    case 3 -> distance--; endTurn = true;
+                    case 4 ->
+                    case 5 ->
+                    default -> System.out.println("Неизвестная команда");
+                }

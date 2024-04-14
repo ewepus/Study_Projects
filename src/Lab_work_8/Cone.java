@@ -17,7 +17,8 @@ public class Cone {
 
     public int getVolume() {
         double numberThree = 3;
-        return (int) Math.round(diameter * height / numberThree);
+        int radius = diameter / 2;
+        return (int) Math.round(Math.PI * Math.pow(radius, 2) * height / numberThree);
     }
 
     public boolean isEqualAreas(Cone cone) {

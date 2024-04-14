@@ -2,7 +2,7 @@ package Demo_work_8;
 
 import java.util.Scanner;
 
-public class BankMain {
+public class BankAccountMain {
     public static BankAccount[] accounts = new BankAccount[100];
     public static int id = 0;
 

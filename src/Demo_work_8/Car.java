@@ -18,9 +18,7 @@ public class Car {
     }
 
     public String getInfo() {
-        return String.format(
-                "The car is: %s %s - %d HP",
-                make, model, horsePower);
+        return String.format("The car is: %s %s - %d HP", make, model, horsePower);
     }
 
     public String getMake() {
