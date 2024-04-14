@@ -1,3 +1,5 @@
+package Stuff;
+
 import java.util.Scanner;
 
 public class ThreeMatrix {

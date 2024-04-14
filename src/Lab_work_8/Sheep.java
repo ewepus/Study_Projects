@@ -23,6 +23,7 @@ public class Sheep {
         }
         return -1;
     }
+
     public void addOneYear() {
         this.age++;
     }

@@ -13,7 +13,7 @@ public class SheepMain {
             System.out.println("Invalid name");
         } else {
             String gender = sc.nextLine().toLowerCase();
-            if (!gender.equals("male") && !gender.equals("female")) {
+            if (!gender.equals("female") && !gender.equals("male")) {
                 System.out.println("Invalid gender");
             } else {
                 try {
@@ -24,7 +24,7 @@ public class SheepMain {
                         Sheep sheep = new Sheep(name, gender, age);
                         System.out.println(sheep.getInfo());
                     }
-                } catch (Exception e) {
+                } catch (NumberFormatException e) {
                     System.out.println("Invalid age");
                 }
             }
